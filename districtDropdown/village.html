@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Auto-suggest Dropdown</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .div1{
+            margin: 10%;
+        }
+        .div2{
+              margin: 10%;
+        }
+        section{
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            background-color: blue;
+            justify-content: center;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="letter-spacing: 3px; margin-left: 30%;">patta sitta porject</h1>
+<section>
+    <div class="div1">
+        <label for="district">Select a district:</label>
+    <select id="district">
+        <option value="">-- Select District --</option>
+        <option value="kanchipuram">Kanchipuram</option>
+        <option value="chengalpattu">Chengalpattu</option>
+    </select>
+</div>
+
+    <div class="div2">
+        <label for="village">Select a village:</label>
+    <select id="village">
+        <option value="">-- Select Village --</option>
+    </select>
+    </div>
+</section>
+    <script>
+        $(document).ready(function () {
+            // When a district is selected, populate the villages dropdown
+            $('#district').on('change', function () {
+                var district = $(this).val();
+
+                $.ajax({
+                    url: 'village_data.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { district: district },
+                    success: function (data) {
+                        $('#village').empty();
+                        $('#village').append($('<option>', {
+                            value: '',
+                            text: '-- Select Village --'
+                        }));
+                        $.each(data, function (i, village) {
+                            $('#village').append($('<option>', {
+                                value: village,
+                                text: village
+                            }));
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
