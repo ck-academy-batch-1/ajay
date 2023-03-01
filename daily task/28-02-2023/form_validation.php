@@ -91,11 +91,7 @@
         } else if (strlen($_POST["pass"]) <= '8') {
             $passErr = "Your Password Must Contain At Least 8 Characters!";
             
-        } else if (!preg_match('/^[A-Z]*$/', $pass)) {
-            $passErr = "Your Password Must Contain At Least 1 Capital Letter!";
-        } else if (!preg_match('/^[a-z]*$/', $pass)) {
-            $passErr = "Your Password Must Contain At Least 1 Lowercase Letter!";
-        } else {
+        }  else {
             $pass = test_input($_POST["pass"]);
         }
 
@@ -120,7 +116,7 @@
         if (empty($_POST["zip_code"])) {
             $zip_codeErr = "zipcode required";
         } 
-          else  if (!preg_match('/^\d{5}$/', $zip_code)) {
+          else  if (!preg_match('/^\d{5}*$/', $zip_code)) {
                 $zip_codeErr = "Please enter your zip code as #####.";
             }
             else {
@@ -147,7 +143,7 @@
         if (empty($_POST["address"])) {
             $addressErr = "address required";
         } else {
-            $country = test_input($_POST["address"]);
+            $address = test_input($_POST["address"]);
         }
 
         if (empty($_POST["about"])) {
@@ -267,23 +263,23 @@
     <div>
         <?php
         echo "<h2>Your Input:</h2>";
-        echo "your name:".$name;
+        echo "your name: ".$name;
         echo "<br>";
-        echo "your password:". $pass;
+        echo "your password: ". $pass;
         echo "<br>";
-        echo "your address:".$address;
+        echo "your address:  ".$address;
         echo "<br>";
-        echo "country you selected:".$country;
+        echo "country you selected: ".$country;
         echo "<br>";
-        echo "your zipcode:". $zip_code;
+        echo "your zipcode: ". $zip_code;
         echo "<br>";
-        echo "your email:".$email;
+        echo "your email: ".$email;
         echo "<br>";
-        echo "your gender:" .$gender;
+        echo "your gender: " .$gender;
         echo "<br>";
-        echo "language you chosen:".$lang;
+        echo "language you chosen: ".$lang;
         echo "<br>";
-        echo "about:".$about;
+        echo "about: ".$about;
         ?>
     </div>
 
