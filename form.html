@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            padding: 5px;
+        }
+
+        body {
+
+            background-color: wheat
+        }
+
+        form {
+            background-color: aqua;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 250px;
+        }
+
+
+        input[type="submit"] {
+            width: 77px;
+            height: 27px;
+            position: relative;
+            left: 180px;
+        }
+
+        select {
+            padding: 5px;
+            width: 263px;
+        }
+
+        form {
+            text-align: center;
+
+            font-size: 20px;
+            padding: 5%;
+            width: fit-content;
+            margin: 20px auto;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        td:last-child {
+            text-align: left;
+        }
+
+        .error {
+            color: #FF0000;
+        }
+
+        div {
+            background-color: white;
+            padding: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+        <center>
+            <h2>REGISTRATION FORM</h2>
+        </center>
+        <form method="post" action="file.php">
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label> </td>
+                    <td> <input type="text" name="name"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="pass">Password:</label> </td>
+                    <td><input type="password" name="pass"></td>
+                </tr>
+
+                <tr>
+                    <td><label>Address:</label> </td>
+                    <td><input type="text" name="address"></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="country">Select:</label> </td>
+                    <td>
+                        <select name="country" id="country">
+                        <option value="">--Education Qualification--</option>
+                            <option value="cuddalore">B.E</option>
+                            <option value="vilupram">B.TECH</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="zip_code">Zip Code:</label> </td>
+                    <td><input type="text" name="zip_code"> </td>
+                </tr>
+
+                <tr>
+                    <td><label for="id">E - mail:</label> </td>
+                    <td><input type="text" name="email">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="id">gender:</label> </td>
+                    <td>
+                        <input type="radio" name="gender" value="female">Male
+                        <input type="radio" name="gender" value="male">Female
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="id">language:</label> </td>
+                    <td>
+                        <input type="checkbox" name="lang" value="English">English
+                        <input type="checkbox" name="lang" value="Non English">Tamil
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="about">About:</label> </td>
+                    <td>
+                        <textarea name="about" rows="5" cols="40"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="about">Upload Resume:</label> </td>
+                    <td>
+                        <input type="file" name="upload" accept="application/pdf"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+
+</html>
