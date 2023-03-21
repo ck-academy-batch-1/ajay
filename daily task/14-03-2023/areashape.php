@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$length = $_POST['length'];
 	$width = $_POST['width'];
 	$radius = $_POST['radius'];
-    
 	class Shape {
 		public $length;
 		public $width;
